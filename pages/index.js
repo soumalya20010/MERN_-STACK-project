@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
+import Featured from '@/components/Featured';
 
 
 
@@ -18,7 +19,7 @@ export default function Home() {
         <link rel="png" href="C:\Users\souma\Desktop\New folder\restaurant-app\public\pizza favi.png"/>
       </Head>
      
- homepage 
+<Featured/>
  </div>
    
   );
