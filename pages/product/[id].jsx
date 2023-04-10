@@ -1,12 +1,12 @@
 import styles from "../../styles/Product.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useState } from "react";
 
 const Product = () => {
   const [size, setSize] = useState(0);
   const pizza = {
     id: 1,
-    img: "/img/pizza.png",
+    img: "/img/Farmhouse.jpg",
     name: "CAMPAGNOLA",
     price: [19.9, 23.9, 27.9],
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
@@ -26,15 +26,15 @@ const Product = () => {
         <h3 className={styles.choose}>Choose the size</h3>
         <div className={styles.sizes}>
           <div className={styles.size} onClick={() => setSize(0)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
+            <Image src="/img/Farmhouse.jpg" layout="fill" alt="" />
             <span className={styles.number}>Small</span>
           </div>
           <div className={styles.size} onClick={() => setSize(1)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
+            <Image src="/img/Farmhouse.jpg" layout="fill" alt="" />
             <span className={styles.number}>Medium</span>
           </div>
           <div className={styles.size} onClick={() => setSize(2)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
+            <Image src="/img/Farmhouse.jpg" layout="fill" alt="" />
             <span className={styles.number}>Large</span>
           </div>
         </div>

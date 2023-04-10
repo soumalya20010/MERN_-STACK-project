@@ -1,5 +1,5 @@
 import styles from "../../styles/Order.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Order = () => {
   const status = 0;
@@ -14,6 +14,7 @@ const Order = () => {
       <div className={styles.left}>
         <div className={styles.row}>
           <table className={styles.table}>
+            <tbody>
             <tr className={styles.trTitle}>
               <th>Order ID</th>
               <th>Customer</th>
@@ -34,6 +35,7 @@ const Order = () => {
                 <span className={styles.total}>$79.80</span>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.row}>
