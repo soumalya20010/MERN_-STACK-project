@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Featured from '@/components/Featured';
@@ -7,7 +7,7 @@ import PizzaList from '@/components/PizzaList';
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <title>Pizza Palace</title>
         <meta name="description" content="Best pizza in town" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="png" href="C:\Users\souma\Desktop\New folder\restaurant-app\public\pizza favi.png"/>
+        <link rel="icon" href="C:\Users\souma\Desktop\New folder\restaurant-app\public\favicon.ico"/>
       </Head>
      
 <Featured/>
