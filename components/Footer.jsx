@@ -5,16 +5,15 @@ const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <Image src="/img/bg.png" objectFit="cover" layout="fill" alt="" />
+        <Image src="/img/bg.jpg" objectFit="cover" layout="fill" alt="" />
       </div>
       <div className={styles.item}>
         <div className={styles.card}>
           <h2 className={styles.motto}>
-            OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
-          </h2>
+           PIZZA ZONE</h2>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>FIND OUR RESTAURANTS</h1>
+          <h1 className={styles.title}>FIND OUR RESTAURANTS BRANCHES</h1>
           <p className={styles.text}>
             1654 R. Don Road #304.
             <br /> NewYork, 85022
