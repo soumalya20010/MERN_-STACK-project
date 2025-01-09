@@ -6,7 +6,7 @@ import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ pizzaList, admin }) {
+export default function Home({ pizzaList,IsLoggedIn, admin }) {
   const [close, setClose] = useState(true);
   return (
     <div className={styles.container}>
