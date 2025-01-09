@@ -80,7 +80,7 @@ const Product = ({ pizza }) => {
           ))}
         </div>
         <div className={styles.add}>
-          <input
+          <input min={0}
             onChange={(e) => setQuantity(e.target.value)}
             type="number"
             defaultValue={1}

@@ -16,8 +16,8 @@ export default function Home({ pizzaList,IsLoggedIn, admin }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
-      
-      <PizzaList pizzaList={pizzaList} />
+     
+      <PizzaList pizzaList={pizzaList}  isLoggedIn={IsLoggedIn}/>
       {!close && <Add setClose={setClose} />}
     </div>
   );
@@ -26,9 +26,11 @@ export default function Home({ pizzaList,IsLoggedIn, admin }) {
 export const getServerSideProps = async (ctx) => {
   const myCookie = ctx.req?.cookies || "";
   let admin = false;
+  let IsLoggedIn = false;
 
   if (myCookie.token === process.env.TOKEN) {
     admin = true;
+    IsLoggedIn = true;
   }
 
   const res = await axios.get("http://localhost:3000/api/products");
@@ -36,6 +38,7 @@ export const getServerSideProps = async (ctx) => {
     props: {
       pizzaList: res.data,
       admin,
+      IsLoggedIn,
     },
   };
 };

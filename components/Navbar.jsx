@@ -32,12 +32,12 @@ const Navbar = () => {
                     <li className={styles.listItem}>Contact</li>
                     {isAuthenticated ? (
                         <li>
-                         <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                         <button className={styles.button} onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                          Log Out
                                            </button>
                                        </li>
                     ) : (
-                    <li className={styles.listItem}><button onClick={() => loginWithRedirect()}>Log In</button>;</li>
+                    <li className={styles.listItem}><button className={styles.button} onClick={() => loginWithRedirect()}>Log In</button></li>
                       )}
 </ul>
 </div>
