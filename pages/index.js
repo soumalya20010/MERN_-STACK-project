@@ -33,12 +33,35 @@ export const getServerSideProps = async (ctx) => {
     IsLoggedIn = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/products");
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      return [];
+    }
+  };
+
+  let pizzaList = await fetchData();
+
+  // Retry mechanism
+  if (pizzaList.length === 0) {
+    console.log("Retrying to fetch products...");
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second
+    pizzaList = await fetchData();
+  }
+
   return {
     props: {
-      pizzaList: res.data,
+      pizzaList,
       admin,
       IsLoggedIn,
     },
   };
 };
+
+
+
+
+

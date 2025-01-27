@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post("http://localhost:3000/api/login", {
+      await axios.post("/api/login", {
         username,
         password,
       });
@@ -20,7 +20,7 @@ const Login = () => {
       setError(true);
     }
   };
-
+  
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
