@@ -14,7 +14,7 @@ const PizzaCard = ({ pizza }) => {
       await loginWithRedirect(); // Log in the user using Auth0
     } else {
       // Proceed with the order process
-      router.push(`/product/${pizza._id}`);
+      router.push(`/products/${pizza._id}`);
     }
   };
  
@@ -22,7 +22,7 @@ const PizzaCard = ({ pizza }) => {
   console.log(`Image path: ${pizza.img}`);
   return (
     <div className={styles.container}>
-      <a href={`/product/${pizza._id}`} onClick={handleOrderClick}>
+      <a href={`/products/${pizza._id}`} onClick={handleOrderClick}>
         <Image src={imagePath} alt={pizza.title} width="500" height="500" />
       </a>
       <h1 className={styles.title}>{pizza.title}</h1>
