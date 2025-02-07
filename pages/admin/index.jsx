@@ -70,7 +70,7 @@ const AdminPage = ({ orders, products, admin }) => {
         </table>
       </div>
       <div className={styles.item}>
-        <h1 className={styles.title}>Products</h1>
+        <h1 className={styles.title}>Inventory Items</h1>
         <ul>
           {pizzaList.map((pizza) => (
             <li key={pizza._id}>

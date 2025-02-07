@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import styles from "../styles/Navbar.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
@@ -31,10 +31,18 @@ const Navbar = () => {
                 <Link href="/" passHref>
             <li className={styles.listItem}>Homepage</li>
           </Link>
-                    <li className={styles.listItem}>Products</li>
-                    <li className={styles.listItem}>Menu</li>
+          <Link href="/about" passHref>
+            <li className={styles.listItem}>About</li>
+          </Link>
+          <Link href="/Menu" passHref>
+          <li className={styles.listItem}>Menu</li></Link>
+                    
                     <Image src="/img/pizza_logo1.png" alt="" width="150" height="100" />
-                    <li className={styles.listItem}>Events</li>
+                   
+                    <Link href="/admin" passHref>
+            <li className={styles.listItem}>Admin</li>
+          </Link>
+                   
                     <li className={styles.listItem}>Blog</li>
                     <li className={styles.listItem}>Contact</li>
                     {isAuthenticated ? (
