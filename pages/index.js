@@ -36,7 +36,7 @@ export const getServerSideProps = async (ctx) => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/products");
+      const res = await axios.get("https://mern-stack-project-plum.vercel.app/api/products");
       return res.data;
     } catch (error) {
       console.error("Error fetching products:", error);
