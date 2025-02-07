@@ -25,3 +25,30 @@ Opt veggies from many options.
 9. Admin must receive the order and change the status of the pizza- as order received, In the kitchen, and Sent to delivery.
 
 10. For every update from the admin, the status change must be reflected in the user dashboard
+
+{
+  "title": "Chicken Tikka Pizzas",
+  "img": "/img/Chicken Pepperoni.jpg",
+  "desc": "A delicious countryside pizza.",
+  "prices": [
+    7,
+    12,
+    18
+  ],
+  "extraOptions": [
+    {
+      "text": "Extra Cheese",
+      "price": 2,
+      "_id": "67a5c6e4db3ddf3e880f754a"
+    },
+    {
+      "text": "Pepperoni",
+      "price": 3,
+      "_id": "67a5c6e4db3ddf3e880f754b"
+    }
+  ],
+  "_id": "67a5c6e4db3ddf3e880f7549",
+  "createdAt": "2025-02-07T08:40:04.699Z",
+  "updatedAt": "2025-02-07T08:40:04.699Z",
+  "__v": 0
+}

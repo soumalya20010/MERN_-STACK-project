@@ -1,20 +1,19 @@
 import dynamic from "next/dynamic";
-import { Auth0Provider } from "@auth0/auth0-react";
-import store from "../redux/store";
 import { Provider } from "react-redux";
+import store from "../redux/store";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 
-export default function restaurantapp({ Component, pageProps }) {
-  const Auth0ProviderWithClient = dynamic(
-    () => import("@auth0/auth0-react").then((module) => module.Auth0Provider),
-    { ssr: false }
-  );
+const Auth0ProviderWithClient = dynamic(
+  () => import("@auth0/auth0-react").then((module) => module.Auth0Provider),
+  { ssr: false }
+);
 
+export default function restaurantapp({ Component, pageProps }) {
   return (
     <Auth0ProviderWithClient
-      domain="dev-13xilwp4tto27exd.us.auth0.com"
-      clientId="CjeRiZhlCu491jjHIpW8c2Au9sUMQWM9"
+      domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
+      clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
       redirectUri={typeof window !== 'undefined' && window.location.origin}
     >
       <Provider store={store}>
