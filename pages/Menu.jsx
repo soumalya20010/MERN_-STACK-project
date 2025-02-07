@@ -32,7 +32,7 @@ export async function getStaticProps() {
       name: 'Margherita Pizza',
       description: 'Classic margherita pizza with fresh tomatoes, mozzarella, and basil.',
       price: 12.99,
-      image: '/img/margherita.jpg',
+      image: '/img/Margherita.jpg',
     },
     {
       id: 2,
