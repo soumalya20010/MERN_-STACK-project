@@ -97,7 +97,7 @@ const Product = ({ pizza }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://mern-stack-project-plum.vercel.app/api/products${params.id}`
+    `https://mern-stack-project-plum.vercel.app/api/products/${params.id}`
   );
   return {
     props: {
