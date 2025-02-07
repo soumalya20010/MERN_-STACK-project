@@ -5,6 +5,7 @@ import { useState } from "react";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
+import Add from '../components/Add';
 
 export default function Home({ pizzaList,IsLoggedIn, admin }) {
   const [close, setClose] = useState(true);

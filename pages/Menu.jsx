@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../styles/Menu.module.css';
 
 const Menu = ({ menuItems }) => {
@@ -12,7 +13,7 @@ const Menu = ({ menuItems }) => {
       <div className={styles.menuList}>
         {menuItems.map((item) => (
           <div key={item.id} className={styles.menuItem}>
-            <img src={item.image} alt={item.name} className={styles.image} />
+          <Image src={item.image} alt={item.name} className={styles.image} width={250} height={250} />
             <h2 className={styles.name}>{item.name}</h2>
             <p className={styles.description}>{item.description}</p>
             <p className={styles.price}>${item.price}</p>
