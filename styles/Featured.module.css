@@ -1,36 +1,139 @@
 .container {
-    height: calc(100vh - 100px);
-    background-color: #d1781e;
-    overflow: hidden;
-    position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  /* transition: all 1.5s ease; */
+}
+.textContainer{
+  position: fixed;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 10px; 
+  top: 350px;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 3; /* Ensure the text is above the overlay */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  font-size: 2rem; /* Adjust font size as needed */
+  font-weight: bold; /* Make the text bold */
+  font-family: Arial, sans-serif; /* O */
+}
+
+.textContainer h1,
+.textContainer p {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start 20px below */
+  animation: slideUp 0.5s ease-out forwards; /* Slide up animation */
+}
+.separator {
+  display: block;
+  margin: 10px auto; /* Center the separator horizontally */
+  width: 250px; /* Adjust the width of the separator */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.btn {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20; /* Ensure it is above other elements */
+  padding: 10px 20px;
+  background-color: transparent; /* Transparent background */
+  color:  #E8BE68; /* Gold text color */
+  border: 2px solid  #E8BE68; /* Gold border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Optional: Make text uppercase */
+}
+.textContainer h1 {
+  animation-delay: 0.5s; /* Start animation after 0.5 seconds */
+}
+
+.textContainer p {
+  animation-delay: 1.5s; /* Start animation after 1.5 seconds */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below */
   }
-  
-  .arrowContainer {
-    position: absolute;
-    width: 10%;
-    height: 20%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    cursor: pointer;
-    z-index: 2;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
   }
-  
-  .wrapper {
-    width: 300vw;
-    height: 100%;
-    display: flex;
-    transition: all 0.4s ease-in-out ;
+}
+
+
+.imgContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.imgContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent overlay */
+  z-index: 1; /* Ensures the overlay is above the background image */
+}
+
+.imgContainer > * {
+  position: relative;
+  z-index: 2; /* Ensures content inside the container is above the overlay */
+}
+
+.imgContainer.active {
+  animation: expand 6s linear forwards /* Apply animation only to the active image */
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(1); /* Start at normal size */
   }
-  
-  .imgContainer {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  100% {
+    transform: scale(1.1); /* Slightly expand */
   }
-  
-  @media screen and (max-width: 480px) {
-    .container{
-      height: 560vh;
-    }
-  }
+}
+.arrowContainer {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowContainer img {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  padding:10px;
+  border-radius: 20px;
+  object-fit: contain;
+
+}

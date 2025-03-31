@@ -1,13 +1,25 @@
-.container{
-height: 100px;
-padding: 0px 50px;
-background-color:black;
-display: flex;
-align-items: center;
-justify-content:space-between ;
-position: sticky;
-top: 0;
-}
+.container {
+    height: 80px;
+    padding: 0px 50px;
+    background: transparent; /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fixed positioning to stay at the top */
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;; /* Smooth transition for hiding and showing */
+  }
+  
+  
+.solid {
+    background: rgba(0, 0, 0, 0.8); /* Solid background for other pages */
+  }
+  
+  .hidden {
+    transform: translateY(-100%); /* Move the navbar out of view */
+  }
 
 .item{
     flex:2;
@@ -41,13 +53,13 @@ top: 0;
 .text:first-child{
     font-size:12px;
     font-weight:500;
-    color: white;
+    color: rgb(18, 1, 1);
     
 }
 .text:last-child{
     font-size:20px;
     font-weight:bold;
-    color: white;
+    color: rgb(13, 1, 1);
     
 
 }

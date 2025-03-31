@@ -1,11 +1,35 @@
 import Image from 'next/image';
+import { useEffect, useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useRouter } from "next/router";
 const Navbar = () => {
     const quantity = useSelector((state) => state.cart.quantity);
     const { loginWithRedirect,isAuthenticated,logout } = useAuth0();
+    const [showNavbar, setShowNavbar] = useState(true); // State to track navbar visibility
+    const router = useRouter();
+    let lastScrollY = 0; 
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > lastScrollY) {
+          // Scrolling down
+          setShowNavbar(false);
+        } else {
+          // Scrolling up
+          setShowNavbar(true);
+        }
+        lastScrollY = window.scrollY;
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+
     const handleCartClick = (e) => {
         if (!isAuthenticated) {
           e.preventDefault();
@@ -14,7 +38,11 @@ const Navbar = () => {
         }
       };
     return(
-        <div className={styles.container}>
+      <div
+      className={`${styles.container} ${
+        showNavbar ? "" : styles.hidden
+      } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
+    >
             <div className={styles.item}>
             <div className={styles.callButton}>
             <Image src="/img/telephone.png" alt="" width="30" height="30" />
