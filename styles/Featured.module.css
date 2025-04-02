@@ -121,7 +121,7 @@
 .arrowContainer {
   width: 50px;
   height: 50px;
-  background-color:#E8BE68;
+  background-color:transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -131,12 +131,17 @@
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 2;
+  border:  2px solid #E8BE68;
+}
+.arrowContainer :hover{
+background-color: #E8BE68;
 }
 
 .arrowContainer img {
   width: 100%;
   height: 100%;
-  background-color: #E8BE68;
+  border: #E8BE68;
+  background-color: transparent;
   padding:10px;
   border-radius: 20px;
   object-fit: contain;

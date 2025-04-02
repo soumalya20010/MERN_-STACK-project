@@ -1,6 +1,6 @@
 .container {
-    height: 80px;
-    padding: 0px 50px;
+    height: 40px;
+    padding: 0px 20px;
     background: transparent; /* Semi-transparent background */
     display: flex;
     align-items: center;
@@ -9,11 +9,13 @@
     top: 0;
     width: 100%;
     z-index: 10;
+    /* margin-left: 20px; */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;; /* Smooth transition for hiding and showing */
   }
   
   .logo{
     color:#E8BE68;
+    margin-right: 30px;
   }
   
 .solid {
@@ -25,7 +27,7 @@
   }
 
 .item{
-    flex:2;
+    flex:3;
     display: flex;
     align-items: center;
 }
@@ -39,30 +41,77 @@
     justify-content: flex-end;
 } 
 
-.callButton{
-    background-color: rgb(255, 241, 240);
+.icon {
+    width: 20px; /* Adjust the size of the icon */
+    height: 20px;
+    margin-right: 8px; /* Add spacing between the icon and text */
+  }
+
+.callButton {
+    background-color: transparent;
     border-radius: 50%;
-    padding: 5px;
     justify-content: center;
     align-items: center;
+    width: 90px; /* Increase the width */
+    height: 50px; /* Increase the height */
+    display: flex; /* Ensure proper alignment */
 }
+.Email {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically center the icon and text */
+    color: white;
+    margin-right:30px;
+  }
+  .lowerNavbar {
+    position: fixed; /* Keep the lower navbar fixed below the upper navbar */
+    top: 45px; /* Position it just below the upper navbar (adjust based on the height of the upper navbar) */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 9; /* Keep it below the upper navbar */
+    background: transparent; /* Optional: Add a background for visibility */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Adjust padding for spacing */
+    /* Optional: Add a border for separation */
+}
+.solid {
+    background: rgba(0, 0, 0, 0.8); /* Black background for non-homepage routes */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .transparent {
+    background: transparent; /* Transparent background for the homepage */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  }
 
 .texts{
-    margin-left: 20px;
-    color: black;
+    margin-left: 10px;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-.text:first-child{
-    font-size:12px;
-    font-weight:500;
-    color: rgb(18, 1, 1);
+.location{
+    margin-right:4ch;
+    display :flex;
+    align-items: center;
+}
+.schedule {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    color: white;
+    margin: 0 auto; /* Center the div within its parent container */
+    margin-right: 610px;
+  }
+  .text:first-child{
+    font-size:15px;
+    font-weight:300;
+    color: white;
     
 }
 .text:last-child{
-    font-size:20px;
-    font-weight:bold;
-    color: rgb(13, 1, 1);
+    font-size:15px;
+  
+    color: white;
     
 
 }
@@ -78,14 +127,35 @@
     white-space: nowrap; /* Prevent text from wrapping to the next line */
 }
 .list{
-    padding: -10px;
+    padding: 105px;
     display: flex;
     align-items: center;
     list-style: none; 
     color: rgb(251, 251, 251);
     font-weight: bold;
-    margin-left: 110px;
+    margin-left: -150px;
+   
 }
+.upperNavbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: transparent; /* Transparent background */
+    border-bottom: 1px solid white; /* Optional: Add a border for separation */
+    height: 45px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+}
+
+.hidden {
+    transform: translateY(-100%); /* Move the navbar out of view */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding */
+}
+
 
 .listItem::after {
     content: ""; /* Empty content for the pseudo-element */
@@ -115,6 +185,7 @@
     margin: 30px;
     font-weight: 500px;
     position: relative;
+margin-right: 70px;
 }
 
 .cart{

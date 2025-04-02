@@ -43,37 +43,79 @@ const Navbar = () => {
     <>
       {/* Second Navbar (Empty Items) */}
       <div
-        className={`${styles.container} ${
-          showNavbar ? "" : styles.hidden
-        } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
-        style={{ top: "0px" }} // Position the second navbar at the top
-      >
-        <div className={styles.item}>
-          <ul className={styles.list}>
-            {/* Empty items */}
-            <li className={styles.listItem}></li>
-            <li className={styles.listItem}></li>
-            <li className={styles.listItem}></li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Original Navbar */}
-      <div
-        className={`${styles.container} ${
-          showNavbar ? "" : styles.hidden
-        } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
-        style={{ top: "80px" }} // Position the original navbar below the second one
-      >
-        <div className={styles.item}>
+  className={`${styles.container} ${styles.upperNavbar} ${
+    showNavbar ? "" : styles.hidden
+  } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
+  style={{ top: "0px" }} // Position the second navbar at the top
+>
+      <div className={styles.item}>
           <div className={styles.callButton}>
-            <Image src="/img/telephone.png" alt="" width="30" height="30" />
+            <Image src="/img/badge_2.png" alt="" width="55" height="55" />
           </div>
           <div className={styles.texts}>
             <div className={styles.text}>ORDER NOW!</div>
             <div className={styles.text}>012 345 678</div>
           </div>
+          
         </div>
+        <div className={styles.location}>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+    alt="Location Icon"
+    className={styles.icon}
+  />
+  <span>Restaurant St delicious city</span>
+</div>
+<div className={styles.schedule}>
+  <img
+    src="/img/clock.png"
+    alt="Clock Icon"
+    className={styles.icon}
+  />
+  <span>Daily 8am to 9pm</span>
+</div>
+        <div className={styles.Email}><img
+    src="/img/comment.png"
+    alt="email"
+    className={styles.icon}
+  />
+  <span>Booking@restaurant</span></div>
+        {/* <div className={styles.text}></div> */}
+        <Link href="/cart" passHref>
+            <div className={styles.cart} onClick={handleCartClick}>
+              {isAuthenticated ? (
+                <>
+                  <Image
+                    src="/img/features_icon_3.png"
+                    alt="Cart"
+                    width="45"
+                    height="40"
+                  />
+                  <div className={styles.counter}>{quantity}</div>
+                </>
+              ) : (
+                <Image
+                  src="/img/features_icon_3.png"
+                  alt="Guest Cart"
+                  width="45"
+                  height="40"
+                />
+              )}
+            </div>
+          </Link>
+      
+      </div>
+          
+      
+      {/* Original Navbar */}
+      <div
+  className={`${styles.container} ${styles.lowerNavbar} ${
+    showNavbar ? "" : styles.hidden
+  } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
+  style={{ top: "42px" }} // Position the lower navbar below the upper navbar
+>
+      
+
 
         <div className={styles.item}>
           <ul className={styles.list}>
@@ -90,7 +132,7 @@ const Navbar = () => {
             <Link href="/admin" passHref>
               <li className={styles.listItem}>ADMIN</li>
             </Link>
-            <li className={styles.listItem}>BLOG</li>
+         
             <li className={styles.listItem}>CONTACT</li>
             {isAuthenticated ? (
               <li>
@@ -117,30 +159,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <div className={styles.item}>
-          <Link href="/cart" passHref>
-            <div className={styles.cart} onClick={handleCartClick}>
-              {isAuthenticated ? (
-                <>
-                  <Image
-                    src="/img/features_icon_3.png"
-                    alt="Cart"
-                    width="45"
-                    height="40"
-                  />
-                  <div className={styles.counter}>{quantity}</div>
-                </>
-              ) : (
-                <Image
-                  src="/img/features_icon_3.png"
-                  alt="Guest Cart"
-                  width="45"
-                  height="40"
-                />
-              )}
-            </div>
-          </Link>
-        </div>
+      
       </div>
     </>
   );
