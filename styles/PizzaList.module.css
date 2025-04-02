@@ -3,13 +3,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius:30px;
+    position: relative; 
+    height:700px;
   }
   
- 
+  .imageRight {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: translate(50%, 0);
+    animation: triangleRight 3s infinite ease-in-out; /* Apply the animation */
+  }
+  
+  .imageLeft {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, 0);
+    animation: triangleLeft 3s infinite ease-in-out; /* Apply the animation */
+  }
+  
+  @keyframes triangleRight {
+    0% {
+      transform: translate(50%, 0) rotate(0deg); /* Initial position */
+    }
+    25% {
+      transform: translate(60%, -10%) rotate(10deg); /* Move slightly up and rotate */
+    }
+    50% {
+      transform: translate(50%, -20%) rotate(0deg); /* Move further up */
+    }
+    75% {
+      transform: translate(40%, -10%) rotate(-10deg); /* Move slightly down and rotate */
+    }
+    100% {
+      transform: translate(50%, 0) rotate(0deg); /* Return to initial position */
+    }
+  }
+
+  @keyframes triangleLeft {
+    0% {
+      transform: translate(-50%, 0) rotate(0deg); /* Initial position */
+    }
+    25% {
+      transform: translate(-60%, -10%) rotate(-10deg); /* Move slightly up and rotate */
+    }
+    50% {
+      transform: translate(-50%, -20%) rotate(0deg); /* Move further up */
+    }
+    75% {
+      transform: translate(-40%, -10%) rotate(10deg); /* Move slightly down and rotate */
+    }
+    100% {
+      transform: translate(-50%, 0) rotate(0deg); /* Return to initial position */
+    }
+  }
   
   .wrapper {
     width: 100%;
     display: flex;
+    margin-top:130px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;

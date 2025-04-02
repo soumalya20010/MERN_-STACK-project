@@ -1,13 +1,19 @@
 .container {
     width: 22%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px 40px;
     cursor: pointer;
+    
   }
+  .container img {
+    width: 100%; /* Ensure the image fits the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Add rounded corners */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
   
   .title {
     font-size: 18px;
