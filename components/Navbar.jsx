@@ -48,6 +48,7 @@ const Navbar = () => {
   } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
   style={{ top: "0px" }} // Position the second navbar at the top
 >
+  <div className={styles.authContainerup}>
       <div className={styles.item}>
           <div className={styles.callButton}>
             <Image src="/img/badge_2.png" alt="" width="55" height="55" />
@@ -84,15 +85,17 @@ const Navbar = () => {
         <Link href="/cart" passHref>
             <div className={styles.cart} onClick={handleCartClick}>
               {isAuthenticated ? (
-                <>
+                <div>
                   <Image
                     src="/img/features_icon_3.png"
                     alt="Cart"
-                    width="45"
-                    height="40"
+                    width="35"
+                    height="30"
+                
                   />
+                  
                   <div className={styles.counter}>{quantity}</div>
-                </>
+                </div>
               ) : (
                 <Image
                   src="/img/features_icon_3.png"
@@ -105,7 +108,7 @@ const Navbar = () => {
           </Link>
       
       </div>
-          
+      </div>
       
       {/* Original Navbar */}
       <div
@@ -130,10 +133,12 @@ const Navbar = () => {
             </Link>
             <h1 className={styles.logo}>PIZZA ZONE</h1>
             <Link href="/admin" passHref>
-              <li className={styles.listItem}>ADMIN</li>
+            <li className={`${styles.listItem} ${styles.admin}`}>ADMIN</li>
             </Link>
          
             <li className={styles.listItem}>CONTACT</li>
+            <li className={styles.listItem}>
+            <div className={styles.authContainer}>
             {isAuthenticated ? (
               <li>
                 <button
@@ -157,8 +162,11 @@ const Navbar = () => {
                 </button>
               </li>
             )}
+          </div>
+          </li>
           </ul>
         </div>
+      
       
       </div>
     </>

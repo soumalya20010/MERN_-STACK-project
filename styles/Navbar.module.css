@@ -12,15 +12,17 @@
     /* margin-left: 20px; */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;; /* Smooth transition for hiding and showing */
   }
-  
-  .logo{
-    color:#E8BE68;
-    margin-right: 30px;
-  }
-  
-.solid {
-    background: rgba(0, 0, 0, 0.8); /* Solid background for other pages */
-  }
+  .logo {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #E8BE68; /* Set the color */
+    margin: 0 0px; /* Add spacing around the logo */
+    text-align: center; /* Center the text */
+}
+.listItem.admin {
+    margin-left: 50px; /* Add space between Admin and the Logo */
+}
   
   .hidden {
     transform: translateY(-100%); /* Move the navbar out of view */
@@ -30,16 +32,10 @@
     flex:3;
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
-.item:nth-child(2){
-    
-    flex: 3;
-} 
-.item:last-child{
-    
-    justify-content: flex-end;
-} 
+
 
 .icon {
     width: 20px; /* Adjust the size of the icon */
@@ -55,12 +51,13 @@
     width: 90px; /* Increase the width */
     height: 50px; /* Increase the height */
     display: flex; /* Ensure proper alignment */
+    margin-right:0px;
 }
 .Email {
     display: flex; /* Align items in a row */
     align-items: center; /* Vertically center the icon and text */
     color: white;
-    margin-right:30px;
+    margin-right:20px;
   }
   .lowerNavbar {
     position: fixed; /* Keep the lower navbar fixed below the upper navbar */
@@ -71,26 +68,45 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Adjust padding for spacing */
+    margin-left:0px;
+    padding: 0px 0px; /* Adjust padding for spacing */
     /* Optional: Add a border for separation */
+   
 }
-.solid {
-    background: rgba(0, 0, 0, 0.8); /* Black background for non-homepage routes */
+.transparent {
+    background: transparent !important; /* Ensure the background is transparent */
     transition: background-color 0.3s ease-in-out; /* Smooth transition */
   }
-  
-  .transparent {
-    background: transparent; /* Transparent background for the homepage */
+  .authContainer {
+    width: 100px; /* Set a fixed width for the login/logout container */
+    display: flex;
+    justify-content: center; /* Center the button inside the container */
+    align-items: center;
+  }
+  .authContainerup {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Ensure it spans the full width */
+    padding: 0 20px; /* Add padding for spacing */
+    position: relative; /* Ensure proper positioning */
+    top: 0; /* Position it at the top */
+  }
+  .solid {
+    background: rgba(0, 0, 0, 0.8) !important; /* Black background for non-homepage routes */
     transition: background-color 0.3s ease-in-out; /* Smooth transition */
   }
 
-.texts{
-    margin-left: 10px;
+  .texts {
+    display: flex;
+    flex-direction: row; /* Align text in a single line */
+    align-items: center; /* Vertically center the text */
+    gap: 5px; /* Add spacing between text items */
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .location{
-    margin-right:4ch;
+    margin-right:35px;
     display :flex;
     align-items: center;
 }
@@ -100,7 +116,7 @@
     justify-content: center; /* Center items horizontally */
     color: white;
     margin: 0 auto; /* Center the div within its parent container */
-    margin-right: 610px;
+    margin-right: 510px;
   }
   .text:first-child{
     font-size:15px;
@@ -127,13 +143,14 @@
     white-space: nowrap; /* Prevent text from wrapping to the next line */
 }
 .list{
-    padding: 105px;
+    padding: 175px;
     display: flex;
     align-items: center;
     list-style: none; 
     color: rgb(251, 251, 251);
     font-weight: bold;
-    margin-left: -150px;
+    margin: 0;
+    margin-right: 40px;
    
 }
 .upperNavbar {
@@ -195,10 +212,10 @@ margin-right: 70px;
 
 .counter{
     position: absolute;
-    top: -10px;
+    top: 0px;
     right:-10px;
-    width:20px;
-    height: 20px;
+    width:10px;
+    height: 10px;
     border-radius:50%;
     background-color:white;
     padding: 8px;
