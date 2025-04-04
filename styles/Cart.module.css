@@ -1,6 +1,7 @@
 .container {
     padding: 50px;
     display: flex;
+    margin-top:80px;
   }
   
   .left {
@@ -65,6 +66,7 @@
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
+    z-index:12;
   }
   
   @media screen and (max-width: 480px) {
@@ -140,5 +142,6 @@
     background-color: white;
     color: teal;
     font-weight: bold;
+    z-index:10;
   }
   

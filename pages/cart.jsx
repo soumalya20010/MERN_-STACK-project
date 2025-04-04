@@ -24,20 +24,20 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("https://mern-stack-project-plum.vercel.app/api/orders", data);
+      const res = await axios.post(
+        "https://mern-stack-project-plum.vercel.app/api/orders",
+        data
+      );
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/orders/${res.data._id}`);
       }
-    } catch (err) {
-      console.log(err);
+    }  catch (err) {
+      console.error("Error creating order:", err);
     }
   };
 
-  // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {
-    // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
-    // This is the main reason to wrap the PayPalButtons in a new component
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
     useEffect(() => {
@@ -71,7 +71,6 @@ const Cart = () => {
                 ],
               })
               .then((orderId) => {
-                // Your code here after create the order
                 return orderId;
               });
           }}
@@ -177,13 +176,25 @@ const Cart = () => {
               </PayPalScriptProvider>
             </div>
           ) : (
-            <button onClick={() => setOpen(true)} className={styles.button}>
+            <button
+              onClick={() => {
+                console.log("Checkout button clicked");
+                setOpen(true);
+              }}
+              className={styles.button}
+            >
               CHECKOUT NOW!
             </button>
           )}
         </div>
       </div>
-      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
+      {cash && (
+        <OrderDetail
+          total={cart.total}
+          createOrder={createOrder}
+          setClose={setCash} // Use setCash to close the modal
+        />
+      )}
     </div>
   );
 };
