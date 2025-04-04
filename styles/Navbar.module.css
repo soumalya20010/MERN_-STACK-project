@@ -141,7 +141,8 @@
     font-weight: bold;
     font-size: 14px; /* Adjust font size to fit text */
     white-space: nowrap; /* Prevent text from wrapping to the next line */
-}
+    
+  }
 .list{
     padding: 175px;
     display: flex;
@@ -195,14 +196,14 @@
 }
 
 .button:hover {
-    color: #E8BE68; /* Change text color on hover */
-    cursor: pointer; /* Optional: Add a pointer cursor */
+  color: #E8BE68; /* Change text color on hover */
+  cursor: pointer; /* Optional: Add a pointer cursor */
 }
 .listItem{
     margin: 30px;
     font-weight: 500px;
     position: relative;
-margin-right: 70px;
+    margin-right: 70px;
 }
 
 .cart{

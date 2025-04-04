@@ -18,6 +18,7 @@ const Product = ({ pizza }) => {
 
   const handleSize = (sizeIndex) => {
     const difference = pizza.prices[sizeIndex] - pizza.prices[size];
+    console.log(`Size changed to index: ${sizeIndex}, Price difference: ${difference}`);
     setSize(sizeIndex);
     changePrice(difference);
   };
@@ -35,6 +36,7 @@ const Product = ({ pizza }) => {
   };
 
   const handleClick = () => {
+    console.log("hello");
     dispatch(addProduct({...pizza, extras, price, quantity}));
   };
 
@@ -87,6 +89,7 @@ const Product = ({ pizza }) => {
             className={styles.quantity}
           />
           <button className={styles.button} onClick={handleClick}>
+            
             Add to Cart
           </button>
         </div>
