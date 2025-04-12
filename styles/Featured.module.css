@@ -147,35 +147,70 @@ background-color: #E8BE68;
   object-fit: contain;
 
 }
-
-@media (max-width: 568px) {
+@media (max-width: 500px) {
   .container {
     height: auto; /* Adjust height for smaller screens */
     flex-direction: column; /* Stack elements vertically */
+    overflow: hidden; /* Prevent content overflow */
   }
 
-  .textContainer {
-    top: 200px; /* Adjust position for smaller screens */
-    font-size: 1.5rem; /* Reduce font size */
-    padding: 10px; /* Add padding for better spacing */
+  .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: row; /* Ensure images are side by side */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
   }
 
-  .btn {
-    bottom: -100px; /* Adjust button position */
-    font-size: 14px; /* Reduce font size */
-    padding: 8px 16px; /* Adjust padding */
+  .imgContainer {
+    flex: 0 0 100%; /* Each image takes up 100% of the viewport width */
+    height: 70vh; /* Reduce image height for smaller screens */
+    background-size: cover; /* Ensure the image still covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    position: relative;
+  }
+
+  .imgContainer.active {
+    display: block; /* Ensure only the active image is displayed */
+  }
+
+  .imgContainer.inactive {
+    display: none; /* Hide inactive images */
   }
 
   .arrowContainer {
     width: 40px; /* Reduce arrow size */
     height: 40px;
+    z-index: 10; /* Ensure arrows are above other elements */
   }
 
   .arrowContainer img {
     padding: 5px; /* Adjust padding for smaller arrows */
+    border-radius: 10px; /* Adjust border radius */
   }
 
-  .imgContainer {
-    height: 70vh; /* Reduce image height for smaller screens */
+  .textContainer {
+    top: 200px; /* Adjust position for smaller screens */
+    font-size: 1.2rem; /* Reduce font size */
+    padding: 10px; /* Add padding for better spacing */
+    transform: translate(-50%, 0); /* Adjust centering */
+  }
+
+  .textContainer h1,
+  .textContainer p {
+    font-size: 1rem; /* Reduce font size for text */
+    line-height: 1.5; /* Adjust line height for readability */
+  }
+
+  .btn {
+    bottom: -50px; /* Adjust button position */
+    font-size: 12px; /* Reduce font size */
+    padding: 6px 12px; /* Adjust padding */
+    border-radius: 3px; /* Adjust border radius */
+  }
+
+  .separator {
+    width: 150px; /* Reduce separator width */
+    margin: 10px auto; /* Adjust spacing */
   }
 }
