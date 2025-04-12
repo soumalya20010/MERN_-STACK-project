@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useRouter } from "next/router";
+
 const Navbar = () => {
   const { loginWithRedirect, isAuthenticated, logout, isLoading } = useAuth0();
   const quantity = useSelector((state) => state.cart.quantity);
   const [showNavbar, setShowNavbar] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
   const router = useRouter();
   let lastScrollY = 0;
 
@@ -34,6 +36,10 @@ const Navbar = () => {
       alert("Please log in first to view your cart.");
       loginWithRedirect();
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen); // Toggle the menu
   };
 
   return (
@@ -78,6 +84,12 @@ const Navbar = () => {
             />
             <span>Booking@restaurant</span>
           </div>
+          <div className={styles.hamburger} onClick={toggleMenu}>
+            {/* Hamburger Icon */}
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+          </div>
           <Link href="/cart" passHref>
             <div className={styles.cart} onClick={handleCartClick}>
               {isAuthenticated ? (
@@ -106,11 +118,13 @@ const Navbar = () => {
       <div
         className={`${styles.container} ${styles.lowerNavbar} ${
           showNavbar ? "" : styles.hidden
-        } ${router.pathname === "/" ? styles.transparent : styles.solid}`}
+        } ${menuOpen ? styles.menuOpen : ""} ${
+          router.pathname === "/" ? styles.transparent : styles.solid
+        }`}
         style={{ top: "42px" }}
       >
         <div className={styles.item}>
-          <ul className={styles.list}>
+          <ul className={`${styles.list} ${menuOpen ? styles.showMenu : ""}`}>
             <Link href="/" passHref>
               <li className={styles.listItem}>HOMEPAGE</li>
             </Link>
@@ -160,7 +174,6 @@ const Navbar = () => {
       </div>
     </>
   );
-}
-
+};
 
 export default Navbar;
