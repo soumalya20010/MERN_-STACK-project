@@ -13,6 +13,8 @@
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;; /* Smooth transition for hiding and showing */
   }
   .logo {
+      
+    
     white-space: nowrap; /* Prevent text from wrapping to the next line */
     font-size: 24px; /* Adjust font size as needed */
     font-weight: bold; /* Make the text bold */
@@ -242,7 +244,10 @@
 }
 @media (max-width: 500px) {
   /* Hide all unnecessary upper navbar elements */
- 
+ /* .container{
+  width:100%;
+  height: 100%;
+ } */
   .location,
   .schedule,
   .hamburger,
@@ -262,13 +267,35 @@
     margin-right: 0;
   }
 
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 170px; /* Decrease this to make items closer */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listItem {
+    padding: 4px 6px; /* You can reduce this too if needed */
+  }
+
+.item{
+  display: flex;
+  gap: -94px;
+}
 .lowerNavbar{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-}
+  padding: -8px;
+  font-size: 10px;
+} 
 
+.logo{
+  font-size: 35px;
+  margin-left: 90px;
+}
 
   /* Cart styling */
   .cart {
