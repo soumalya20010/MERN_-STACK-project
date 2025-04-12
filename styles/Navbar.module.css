@@ -240,29 +240,45 @@
   background-color: #333;
   border-radius: 2px;
 }
-
-  @media (max-width: 500px) {
-    .hamburger {
-      display: flex;
-    }
-    .upperNavbar {
-      display: none !important;
-    }
-  
-    .list {
-      display: none;
-      flex-direction: column;
-      background-color: white;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 150px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      padding: 10px;
-    }
-  
-    .showMenu {
-      display: flex;
-    }
+@media (max-width: 500px) {
+  /* Hide all unnecessary upper navbar elements */
+ 
+  .location,
+  .schedule,
+  .hamburger,
+  .Email {
+    display: none !important;
   }
+
+  /* Keep the icon (assumed inside .callButton) and Email visible */
+  .callButton {
+    background-color: transparent;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 50px;
+    display: flex;
+    margin-right: 0;
+  }
+
+.lowerNavbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+
+  /* Cart styling */
+  .cart {
+    margin-left:-30px;
+  }
+
+  .authContainerup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+  }
+}
