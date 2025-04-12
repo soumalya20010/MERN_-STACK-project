@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+  const Navbar = () => {
   const { loginWithRedirect, isAuthenticated, logout, isLoading } = useAuth0();
   const quantity = useSelector((state) => state.cart.quantity);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
           <div className={styles.hamburger} onClick={toggleMenu}>
             {/* Hamburger Icon */}
-            <div className={styles.line}></div>
+            <div className={styles.line}>hiii</div>
             <div className={styles.line}></div>
             <div className={styles.line}></div>
           </div>

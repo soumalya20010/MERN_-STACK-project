@@ -241,10 +241,12 @@
   border-radius: 2px;
 }
 
-@media screen and (max-width: 500px) {
   @media (max-width: 500px) {
     .hamburger {
       display: flex;
+    }
+    .upperNavbar {
+      display: none !important;
     }
   
     .list {
@@ -264,4 +266,3 @@
       display: flex;
     }
   }
-}
