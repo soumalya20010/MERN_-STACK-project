@@ -147,3 +147,35 @@ background-color: #E8BE68;
   object-fit: contain;
 
 }
+
+@media (max-width: 568px) {
+  .container {
+    height: auto; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .textContainer {
+    top: 200px; /* Adjust position for smaller screens */
+    font-size: 1.5rem; /* Reduce font size */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .btn {
+    bottom: -100px; /* Adjust button position */
+    font-size: 14px; /* Reduce font size */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .arrowContainer {
+    width: 40px; /* Reduce arrow size */
+    height: 40px;
+  }
+
+  .arrowContainer img {
+    padding: 5px; /* Adjust padding for smaller arrows */
+  }
+
+  .imgContainer {
+    height: 70vh; /* Reduce image height for smaller screens */
+  }
+}
