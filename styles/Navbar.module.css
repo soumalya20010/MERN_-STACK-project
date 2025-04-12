@@ -293,8 +293,9 @@
 } 
 
 .logo{
+  margin-top: 180px;
   font-size: 35px;
-  margin-left: 90px;
+  margin-left: 75px;
 }
 
   /* Cart styling */
