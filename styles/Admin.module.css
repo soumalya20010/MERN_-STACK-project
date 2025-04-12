@@ -1,23 +1,44 @@
 .container {
     padding: 50px;
     display: flex;
+    margin-top: 100px;
   }
   
   .item {
     flex: 1;
   }
   
+  .items{
+    padding: 50px;
+  }
+
+  .items ul li {
+  margin-bottom: 10px; /* Add space between inventory items */
+}
+
+.items ul li button {
+  margin-left: 10px; /* Add space between the item title and the delete button */
+}
   .table {
     width: 100%;
     border-spacing: 20px;
     text-align: left;
   }
+
+  .table th:nth-child(5), /* Target the "Status" header */
+.table td:nth-child(5) { /* Target the "Status" cells */
+  width: 150px; /* Set a fixed width for the column */
+  text-align: center; /* Optional: Center-align the text */
+}
   
-  .button {
+.nextbutton{
     border: none;
-    color: white;
+    /* color: white; */
     padding: 5px;
     cursor: pointer;
+    border-radius: 20px;
+    z-index: 20;
+    position: static;
   }
   
   .button:first-child {

@@ -62,7 +62,7 @@ const AdminPage = ({ orders, products, admin }) => {
                 <td>{order.method === 0 ? <span>cash</span> : <span>paid</span>}</td>
                 <td>{status[order.status]}</td>
                 <td>
-                  <button onClick={() => handleStatus(order._id)}>Next Stage</button>
+                  <button className={styles.nextbutton} onClick={() => handleStatus(order._id)} >Next Stage</button>
                 </td>
               </tr>
             </tbody>

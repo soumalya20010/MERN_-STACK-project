@@ -41,7 +41,9 @@ const Order = ({ order }) => {
         </div>
         <div className={styles.row}>
           <div className={statusClass(0)}>
+          <div className={styles.imageContainer}>
             <Image src="/img/paid.png" width={30} height={30} alt="" />
+            </div>
             <span>Payment</span>
             <div className={styles.checkedIcon}>
               <Image
@@ -54,7 +56,9 @@ const Order = ({ order }) => {
             </div>
           </div>
           <div className={statusClass(1)}>
+          <div className={styles.imageContainer}>
             <Image src="/img/bake.png" width={30} height={30} alt="" />
+            </div>
             <span>Preparing</span>
             <div className={styles.checkedIcon}>
               <Image
@@ -67,7 +71,9 @@ const Order = ({ order }) => {
             </div>
           </div>
           <div className={statusClass(2)}>
+          <div className={styles.imageContainer}>
             <Image src="/img/bike.png" width={30} height={30} alt="" />
+            </div>
             <span>On the way</span>
             <div className={styles.checkedIcon}>
               <Image
@@ -80,7 +86,9 @@ const Order = ({ order }) => {
             </div>
           </div>
           <div className={statusClass(3)}>
+          <div className={styles.imageContainer}>
             <Image src="/img/delivered.png" width={30} height={30} alt="" />
+            </div>
             <span>Delivered</span>
             <div className={styles.checkedIcon}>
               <Image
